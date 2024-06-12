@@ -4,28 +4,64 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:gorselodev"
-    Shell.FlyoutBehavior="Flyout"
-    BackgroundColor="#77B0AA">
+    Shell.FlyoutBehavior="Disabled"
+    BackgroundColor="#7AB2B2">
 
-    <ShellContent 
-        Title="Ana Sayfa"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-    <ShellContent
-        Title="Kredi Hesaplama"
-        ContentTemplate="{DataTemplate local:KrediHesaplama}"
-        Route="KrediHesaplama" />
-    <ShellContent
-        Title="Vücut Kitle İndeksi"
-        ContentTemplate="{DataTemplate local:VucutKitleIndeksi}"
-        Route="VucutKitleIndeksi" />
-    <ShellContent
-        Title="Renk Seçici"
-        ContentTemplate="{DataTemplate local:RenkSecici}"
-        Route="RenkSecici" />
-    <ShellContent
-        
-        Title="Yapılacaklar" 
-        ContentTemplate="{DataTemplate local:Yapilacaklar}"
-        Route="Yapilacaklar" />
+    <!-- Giriş Sayfası -->
+    <FlyoutItem Title="Login"  FlyoutDisplayOptions="AsSingleItem">
+        <FlyoutItem.Icon>
+            <FileImageSource File="home.png"/>
+        </FlyoutItem.Icon>
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+    </FlyoutItem>
+
+    <!-- Ana Sayfa -->
+    <FlyoutItem Title="Giriş" FlyoutDisplayOptions="AsSingleItem">
+        <FlyoutItem.Icon>
+            <FileImageSource File="home.png"/>
+        </FlyoutItem.Icon>
+        <ShellContent ContentTemplate="{DataTemplate local:Giris}" Route="Giris" />
+    </FlyoutItem>
+
+    <!-- Kurlar -->
+    <FlyoutItem Title="Kurlar" FlyoutDisplayOptions="AsSingleItem">
+        <FlyoutItem.Icon>
+            <FileImageSource File="kurlar.png"/>
+        </FlyoutItem.Icon>
+        <ShellContent ContentTemplate="{DataTemplate local:Kurlar}" Route="Kurlar" />
+    </FlyoutItem>
+
+    <!-- Haberler -->
+    <FlyoutItem Title="Haberler" FlyoutDisplayOptions="AsSingleItem">
+        <FlyoutItem.Icon>
+            <FileImageSource File="news.png"/>
+        </FlyoutItem.Icon>
+        <ShellContent ContentTemplate="{DataTemplate local:NewsPage}" Route="NewsPage" />
+    </FlyoutItem>
+
+    <!-- Hava Durumu -->
+    <FlyoutItem Title="Hava Durumu" FlyoutDisplayOptions="AsSingleItem">
+        <FlyoutItem.Icon>
+            <FileImageSource File="cloudy.png"/>
+        </FlyoutItem.Icon>
+        <ShellContent ContentTemplate="{DataTemplate local:HavaDurumu}" Route="HavaDurumu" />
+    </FlyoutItem>
+
+    <!-- Yapılacaklar -->
+    
+    <FlyoutItem Title="Yapılacaklar" FlyoutDisplayOptions="AsSingleItem">
+        <FlyoutItem.Icon>
+            <FileImageSource File="todo.png"/>
+        </FlyoutItem.Icon>
+        <ShellContent ContentTemplate="{DataTemplate local:Yapilacaklar}" Route="Yapilacaklar" />
+    </FlyoutItem>
+
+    <!-- Ayarlar -->
+    <FlyoutItem Title="Ayarlar" FlyoutDisplayOptions="AsSingleItem">
+        <FlyoutItem.Icon>
+            <FileImageSource File="settings.png"/>
+        </FlyoutItem.Icon>
+        <ShellContent ContentTemplate="{DataTemplate local:Ayarlar}" Route="Ayarlar" />
+    </FlyoutItem>
+
 </Shell>
